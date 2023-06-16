@@ -75,7 +75,7 @@ Since GNU/LINUX is more compatible with 2Taspian, it'll be easier to load into t
 Boot Mirroring, specially "BM", side-loads drivers from another kernel / system to the current booting file system. By doing this, you are able to side-load any program from the mirrored system, on the default system, you're side-loading with.
 
 # License
-License Name: Apache License 2.0
-Licensed On: 6/15/2023
-License Available: TRUE
-Warranty: FALSE
+* License Name: Apache License 2.0
+* Licensed On: 6/15/2023
+* License Available: TRUE
+* Warranty: FALSE
