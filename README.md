@@ -40,3 +40,34 @@ To apply 2Taspian to your system, do the following steps:
 * Step 2: Add /libraries/apidve.app to [BOOT-PARTITION]:\Windows\Boot
 * Step 3: Allow 2taspian to load by loading /ldr2/2taspldr into [BOOT-PARTITION]:\Windows\Setup\Scripts
 * Step 4: Reboot into BIOS Screen / Menu and boot from "ADD: 2Taspian LDR 16GB"
+
+# Mirror 2Taspian Data to your Windows / Linux Boot Manager (GRUB, EFI, UEFI)
+
+To mirror data from 2taspian Boot Loader, to your own OS Boot Loader, do the following:
+# WINDOWS
+* Load /driver-env/en-US in File Explorer
+* Load /driver-env/en-US/pb86x.deb to /Windows/Boot
+* Read Driver Data from pb86x.deb with Notepad (Applies .RDATA section to the File System)
+* Load /driver-env/en-US/peb86.deb.img into /Windows/Boot/en-US
+* Load /driver/env/en-US/peb86.deb.000.img into /Windows/Boot/en-US
+* Load /driver-env/en-US/peb86.deb.001.img into /Windows/Boot/en-US
+* Load /driver-env/en-US/peb86.deb.002.img into /Windows/Boot/en-US
+* Load /driver-env/en-US/peb86.deb.003.img into /Windows/Boot/en-US
+* Load /driver-env/en-US/peb86.deb.004.img into /Windows/Boot/en-US
+* Dump pb86x.deb (Steps Below)
+* Dump 1: Open pb86x.deb in Notepad
+* Dump 2: Create partition with "B:\"
+* Dump 3: Create a folder with the name "ATAPI"
+* Dump 4: Inside of ATAPI, create a folder named "DVD"
+* Dump 5: COPY first 178.5 K/B from pb86x.deb
+* Dump 6: Paste 178.5 K/B data into a new file "dvdldr.img"
+* Dump 7: Save File.
+# LINUX/GNU
+Since GNU/LINUX is more compatible with 2Taspian, it'll be easier to load into the EXT4 File System, do the following:
+* Load /driver-env/en-US/pb86x.deb into /boot/
+* Load /driver-env/en-US/peb86.deb.img into /dev/
+* Load all other peb86.deb.[NUMBER].img files into /sys/firmware/
+* Flag files by using CAT in terminal (Registers data into File System)
+* Restart LINUX/GNU Kernel
+* Boot into GRUB
+* Select "ADD" Disk and BOOT!
