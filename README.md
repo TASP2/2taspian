@@ -29,3 +29,14 @@ DEH uses the 2Taspian platform to execute memory with special flags and commands
 * DAPL Address: 0x4311FF1135FF6 = Identifies Platform Type = Current Type: 1TS (x32)
 * A-DAPL Address: 0x5311FF561234FF19FF0 = Identifies Platform Type = Current Type: 2TS (x64)
 * B-DAPL Addres: 0xFF11FF3311FF44 = Identifies Platform Type = Current Type: TSD (Default, x86)
+
+
+# Apply 2Taspian to your SYSTEM
+2Taspian is appliable to the following: UEFI, EFI
+2Taspian is also available on the following Linux Roots: Ubuntu, Debian, Pop!_OS
+
+To apply 2Taspian to your system, do the following steps:
+* Step 1: Load /bootmanager/winpeg-pe.deb into /EFIFILESYSTEM/EFI or /EFIFILESYSTEM/DVD.
+* Step 2: Add /libraries/apidve.app to [BOOT-PARTITION]:\Windows\Boot
+* Step 3: Allow 2taspian to load by loading /ldr2/2taspldr into [BOOT-PARTITION]:\Windows\Setup\Scripts
+* Step 4: Reboot into BIOS Screen / Menu and boot from "ADD: 2Taspian LDR 16GB"
